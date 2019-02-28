@@ -20,6 +20,12 @@ def clear():
     answer_value.set("")
 
 
+def backspace():
+    current_text = input_text.get()
+    new_text = current_text[0:len(current_text) -1]
+    input_text.set(new_text)
+
+
 input_text = StringVar()
 input_text.set("")
 
@@ -48,5 +54,7 @@ input_area = Label(root, textvariable=input_text, bg="hot pink", fg="white").gri
 answer_area = Label(root, textvariable=answer_value, bg="blue", fg="white").grid(row=5, column=0, columnspan=4, sticky=W+E)
 
 button_clear = Button(root, text="Clear", command=lambda: clear()).grid(row=6, column=0, columnspan=4, sticky=W+E)
+button_back = Button(root, text="<==", command=lambda: backspace()).grid(row=7, column=0, columnspan=4, sticky=W+E)
+
 
 root.mainloop()
