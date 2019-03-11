@@ -43,7 +43,6 @@ def open_new_note():
     text_value = StringVar()
     new_note_window = Toplevel(root)
 
-
     new_note_title = Label(new_note_window, text="New Note")
     new_note_title.grid()
 
@@ -73,7 +72,9 @@ def open_new_note():
 
 
 def open_list(list_name):
-    print("Open a list")
+    print("Open {}".format(list_name))
+    list_window = Toplevel(root)
+    list_window.title(list_name)
 
 
 lbl_title = Label(root, text="Notes")
@@ -96,7 +97,7 @@ btn_homework = Button(root, bg="#d9ffb3", fg="white", text="Homework", command=l
 btn_homework.config()
 btn_homework.grid(row=4, sticky=E + W)
 
-btn_but = Button(root, bg="#b3ffb3", fg="white", text="But", command=lambda: open_list("Homework"))
+btn_but = Button(root, bg="#b3ffb3", fg="white", text="But", command=lambda: open_list("But"))
 btn_but.config()
 btn_but.grid(row=5, sticky=E + W)
 
